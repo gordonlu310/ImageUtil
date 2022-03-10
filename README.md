@@ -50,3 +50,21 @@ https://sites.google.com/view/appinventor-aicode/my-extensions/imageutil
 >Applies gamma effect to the given image.
 >
 >Parameters: image = component, red = number (double), green = number (double), blue = number (double)
+
+>**ImageAlpha**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157587228-7ef7994f-74be-400e-b375-50d46a997865.png)
+>
+>*Returns:* number (int)
+>
+>*Parameters:* image = component
+
+>**IsCroppedToPadding**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157587396-0230a3d3-2a5a-4906-8ef4-ac83f49c77f7.png)
+>
+>Checks whether this image is cropped to padding.
+>
+>*Returns:* boolean
+>
+>*Parameters:* image = component
