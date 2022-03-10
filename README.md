@@ -107,4 +107,24 @@ https://sites.google.com/view/appinventor-aicode/my-extensions/imageutil
 >
 >Change the image tint color. You can use too alpha values if you want with the 'make a list' block. Do not forget to use the 'make color' block together with the 'make a list' block.
 >
->Parameters: image = component, tint = color
+>*Parameters:* image = component, tint = color
+
+>**SetPadding**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157589009-101470c3-2dca-4db3-b92f-454f5c694d7b.png)
+>
+>Sets the padding of the given image.
+>
+>*Parameters:* image = component, left = number (int), top = number (int), right = number (int), bottom = number (int)
+
+>**UndoGrayscaleAndFade**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157589078-c68e2be1-f5ed-4197-b791-a5cb0d2ff0cf.png)
+>
+>Undos the grayscale and fade effects applied with the AplyGrayscaleAndFade method.
+>
+>*Parameters:* image = component
+
+There are also some properties for the font parameter in the ApplyWatermark method.
+
+![image](https://user-images.githubusercontent.com/88015331/157589125-b5d17acd-f372-46f5-923d-9ba6b0f85df7.png)
