@@ -68,3 +68,43 @@ https://sites.google.com/view/appinventor-aicode/my-extensions/imageutil
 >*Returns:* boolean
 >
 >*Parameters:* image = component
+
+>**RoundCorners**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157588122-5f4ba444-fc4e-48c2-ab30-f101878ae8b4.png)
+>
+>Applies round corners to the Image, with the radius parameter as the radius of each corner.
+>
+>*Parameters:* image = component, radius = number (int)
+
+>**SepiaToningEffect**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157588443-dc17d770-ac08-4d90-88f7-a527adde10a0.png)
+>
+>Turns the image to a Sephia Toned version of the image, by specifying the depth, red, green and blue parameters.
+>
+>*Parameters:* image = component, depth = number (int), red = number (double), green = number (double), blue = number (double)
+
+>**SetBrightness**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157588582-b625d470-10dd-4b37-9197-cebc2686582b.png)
+>
+>Sets whether the image should crop to padding.
+>
+>*Parameters:* image = component, cropToPadding = boolean
+
+>**SetImageAlpha**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157588641-405a2329-ba87-4a74-8b64-de345c3dc78a.png)
+>
+>Sets the alpha value that should be applied to the image.
+>
+>*Parameters:* image = component, alpha = number (int)
+
+>**SetImageTintColor**
+>
+>![image](https://user-images.githubusercontent.com/88015331/157588739-b7868b73-e03c-4dbd-9175-78b5a71b9de9.png)
+>
+>Change the image tint color. You can use too alpha values if you want with the 'make a list' block. Do not forget to use the 'make color' block together with the 'make a list' block.
+>
+>Parameters: image = component, tint = color
