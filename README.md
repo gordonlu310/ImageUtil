@@ -7,7 +7,7 @@ https://sites.google.com/view/appinventor-aicode/my-extensions/imageutil
 
 :package: Package name: com.gordonlu.imageutil.aix
 
-:clock1: Version: 4
+:clock1: Version: 5
 
 :date: Release date:  March 8, 2022 2:00 PM
 
@@ -51,6 +51,15 @@ https://sites.google.com/view/appinventor-aicode/my-extensions/imageutil
 >
 >Parameters: image = component, red = number (double), green = number (double), blue = number (double)
 
+>
+>**HueFilter**
+>
+>![image](https://user-images.githubusercontent.com/88015331/159150725-1836880a-bdf8-4619-b7fa-17be6a8a2f9d.png)
+>
+>Sets the hue filter for the image, with the given level.
+>
+>*Parameters:* image = component, level = number (int)
+
 >**ImageAlpha**
 >
 >![image](https://user-images.githubusercontent.com/88015331/157587228-7ef7994f-74be-400e-b375-50d46a997865.png)
@@ -92,6 +101,15 @@ https://sites.google.com/view/appinventor-aicode/my-extensions/imageutil
 >Sets whether the image should crop to padding.
 >
 >*Parameters:* image = component, cropToPadding = boolean
+
+>
+>**SetColorDepth**
+>
+>![image](https://user-images.githubusercontent.com/88015331/159150735-55752ceb-5772-4e2a-923f-ecb66bd0ab8b.png)
+>
+>Sets the color depth of the image.
+>
+>*Parameters:* image = component, bitOffset = number (int)
 
 >**SetImageAlpha**
 >
