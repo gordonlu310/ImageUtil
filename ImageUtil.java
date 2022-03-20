@@ -273,6 +273,63 @@ public class ImageUtil extends AndroidNonvisibleComponent {
     public String Monospace() {
         return "MONOSPACE";
     }
+    @SimpleFunction(description = "Sets the color depth of the given image.")
+    public void SetColorDepth(AndroidViewComponent image, int bitOffset) {
+        View view = image.getView();
+        ImageView imageView = (ImageView) view;
+        imageView.invalidate();
+        BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+        Bitmap src = drawable.getBitmap();
+        int width = src.getWidth();
+        int height = src.getHeight();
+        Bitmap bmOut = Bitmap.createBitmap(width, height, src.getConfig());
+        int A, R, G, B;
+        int pixel;
+        for(int x = 0; x < width; ++x) {
+            for(int y = 0; y < height; ++y) {
+                pixel = src.getPixel(x, y);
+                A = Color.alpha(pixel);
+                R = Color.red(pixel);
+                G = Color.green(pixel);
+                B = Color.blue(pixel);
+                R = ((R + (bitOffset / 2)) - ((R + (bitOffset / 2)) % bitOffset) - 1);
+                if(R < 0) { R = 0; }
+                G = ((G + (bitOffset / 2)) - ((G + (bitOffset / 2)) % bitOffset) - 1);
+                if(G < 0) { G = 0; }
+                B = ((B + (bitOffset / 2)) - ((B + (bitOffset / 2)) % bitOffset) - 1);
+                if(B < 0) { B = 0; }
+                bmOut.setPixel(x, y, Color.argb(A, R, G, B));
+            }
+        }
+        imageView.setImageBitmap(bmOut);
+    }
+    @SimpleFunction(description = "Applies hue filter for your image with the given level.")
+    public void HueFilter(AndroidViewComponent image, int level) {
+        View view = image.getView();
+        ImageView imageView = (ImageView) view;
+        imageView.invalidate();
+        BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+        Bitmap source = drawable.getBitmap();
+        // https://shaikhhamadali.blogspot.com/2013/07/before-hue-filter-effect-after-hue.html
+          int width = source.getWidth();
+            int height = source.getHeight();
+            int[] pixels = new int[width * height];
+            float[] HSV = new float[3];
+            source.getPixels(pixels, 0, width, 0, 0, width, height);
+            int index = 0;
+            for(int y = 0; y < height; ++y) {
+                for(int x = 0; x < width; ++x) {
+                    index = y * width + x;              
+                    Color.colorToHSV(pixels[index], HSV);
+                    HSV[0] *= level;
+                    HSV[0] = (float) Math.max(0.0, Math.min(HSV[0], 360.0));
+                    pixels[index] |= Color.HSVToColor(HSV);
+                }
+            }              
+            Bitmap bmOut = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            bmOut.setPixels(pixels, 0, width, 0, 0, width, height);
+            imageView.setImageBitmap(bmOut);
+    }
     @SimpleFunction(description = "Sets the brightness of the content for the given image, according to the value parameter.")
     public void SetBrightness(AndroidViewComponent image, int value) {
         View view = image.getView();
